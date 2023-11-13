@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1>Stupid Coaching</h1>
+
+  <div class="border-start border-4 px-2">
+    <p><%= params[:answer] %></p>
+    <p class="fst-italic">-You</p>
+  </div>
+
+  <div class="border-start border-4 px-2 bg-warning bg-opacity-10">
+    <% if params[:answer] == "I am going to work"%>
+      <p class="fw-bold"><%= "Great!" %></p>
+      <% elsif params[:answer].end_with?("?") %>
+      <p class="fw-bold"><%= "Silly question, get dressed and go to work!" %></p>
+      <% else %>
+      <p class="fw-bold"><%= "I don't care, get dressed and go to work!" %></p>
+    <% end %>
+    <p class="fst-italic">-Your coach</p>
+  </div>
+
+  <%= link_to "Ask another question", "/ask", :class => "btn btn-primary"%>
+
+</div>
